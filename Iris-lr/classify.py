@@ -13,10 +13,9 @@ def gradient(x,y,theta):
     a= ((sigmoid(x.dot(theta))-y))/len(y)
     return x.T.dot(a)
 def graddescent(x,y,theta,iteration,alpha):
-    i=0
-       
+    i=0   
     while i<=iteration:
-	print(costfunction(x,y,theta))
+        print(costfunction(x,y,theta))
         theta=theta-alpha*(gradient(x,y,theta))
         i+=1
     return theta	
@@ -27,11 +26,11 @@ x=np.append(np.ones([m,1]),x,axis=1)
 y=np.array(da.iloc[:,-1])
 for i in range(len(y)):
     if y[i]=='Iris-setosa':
-	y[i]=0
+        y[i]=0
     if y[i]=='Iris-versicolor':
-	y[i]=1
+        y[i]=1
     if y[i]=='Iris-virginica':
-	y[i]=2
+        y[i]=2
 print(x,y)
 
 theta=np.random.rand(5,3)
@@ -64,11 +63,11 @@ verdict=[]
 
 for i in onvsall:
     if i==0:
-	verdict.append('Iris-setosa')
+        verdict.append('Iris-setosa')
     elif i==1:
-	verdict.append('Iris-versicolor')
+        verdict.append('Iris-versicolor')
     elif i==2:
-	verdict.append('Iris-virginica')	
+        verdict.append('Iris-virginica')	
 
 verdict=np.array(verdict)
 print("the prediction says:")
