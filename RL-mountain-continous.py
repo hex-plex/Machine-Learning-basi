@@ -82,7 +82,8 @@ with tf.Session() as sess:
         steps = 0
         done = False
         while not done:
-
+            env.render()
+            
             action = sess.run(action_tf_var, feed_dict={state_placeholder:scale_state(state)})
 
             next_state, reward, done, _ = env.step(np.squeeze(action, axis=0))
